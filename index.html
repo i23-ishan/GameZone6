@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade X - Ultimate Gaming Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <header class="glass-header">
+        <div class="logo">🎮 Arcade <span>X</span></div>
+        <nav style="display: flex; gap: 10px; align-items: center;">
+            
+            <button id="musicToggle" class="glow-btn" style="padding: 5px 15px; font-size: 0.9rem; background: #475569; box-shadow: none;">🔈 Music: OFF</button>
+            
+            <button id="loginBtn" class="glow-btn">Login Profile</button>
+            <div id="userGreeting" class="hidden">
+                <img id="userAvatar" src="" alt="Avatar" class="avatar">
+                <span>Welcome, <strong id="displayPlayerName" style="color: #00f2fe;">Player</strong>!</span>
+                <button id="logoutBtn" class="logout-txt">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Level Up Your Game</h1>
+            <p>Select a game below. Your scores are saved locally to your device!</p>
+        </section>
+
+        <section id="games" class="game-grid"></section>
+    </main>
+
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content glass-card">
+            <h2 style="color: #8b5cf6;">Create Profile</h2>
+            <p>Enter a username to save your scores locally.</p>
+            <input type="text" id="playerNameInput" placeholder="Enter Username...">
+            <button id="saveProfileBtn" class="glow-btn" style="width: 100%;">Start Playing</button>
+            <button id="closeModalBtn" class="close-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="js/games-config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

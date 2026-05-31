@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Defender - Arcade X</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar glass-panel">
+        <a href="../../index.html" class="back-btn">⬅ Back</a>
+        <div id="playerNameDisplay" style="display: none; color: #00f2fe; font-weight: bold;">👤 Player</div>
+        <div class="stats">
+            <span>Score: <strong id="score">0</strong></span>
+            <span>Level: <strong id="level">1</strong></span>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+        <div id="startScreen" class="overlay">
+            <h1 id="screenTitle">Space Defender 🚀</h1>
+            <p id="screenMsg">Use Left/Right arrows to move. Up arrow to shoot! Press Space to pause.</p>
+            <button onclick="startGame()" class="glow-btn">Start Mission</button>
+        </div>
+
+        <div id="pauseOverlay" class="overlay" style="display: none;">
+            <h2 style="color: #facc15;">PAUSED</h2>
+            <p>Press Space to Resume</p>
+        </div>
+    </div>
+
+    <div class="mobile-controls">
+        <button onmousedown="moveLeft()" onmouseup="stopMove()" ontouchstart="moveLeft()" ontouchend="stopMove()">⬅️</button>
+        <button onmousedown="shoot()" ontouchstart="shoot()" class="shoot-btn">🔥 Shoot</button>
+        <button onmousedown="moveRight()" onmouseup="stopMove()" ontouchstart="moveRight()" ontouchend="stopMove()">➡️</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

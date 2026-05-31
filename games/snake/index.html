@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Snake - Arcade X</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <header class="glass-header">
+        <div class="logo">🎮 Arcade <span>X</span></div>
+        <div class="header-right">
+            <span id="playerNameDisplay" class="player-name"></span>
+            <a href="../../index.html" class="back-btn">⬅ Home</a>
+        </div>
+    </header>
+
+    <div class="game-wrapper">
+        <div class="game-container glass-card">
+            <div class="ui-panel">
+                <p>Score: <span id="score" class="highlight">0</span></p>
+                <p>Level: <span id="level" class="highlight">1</span></p>
+            </div>
+            
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+            <div class="overlay" id="pauseOverlay" style="display: none;">
+                <div class="overlay-content">
+                    <h2>PAUSED</h2>
+                    <p>Press [ SPACE ] to Resume</p>
+                </div>
+            </div>
+
+            <div class="overlay" id="startScreen">
+                <div class="overlay-content">
+                    <h1 id="screenTitle" style="color: #00f2fe;">Neon Snake</h1>
+                    <p id="screenMsg">Use Arrow Keys or on-screen controls.</p>
+                    <button onclick="startGame()" class="glow-btn">Start Engine</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <button class="btn-ctrl" onclick="setDirection('UP')">▲</button>
+            <div class="ctrl-row">
+                <button class="btn-ctrl" onclick="setDirection('LEFT')">◀</button>
+                <button class="btn-ctrl btn-pause" onclick="togglePause()">⏸</button>
+                <button class="btn-ctrl" onclick="setDirection('RIGHT')">▶</button>
+            </div>
+            <button class="btn-ctrl" onclick="setDirection('DOWN')">▼</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

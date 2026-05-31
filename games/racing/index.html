@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitro Racer - Arcade X</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <header class="glass-header">
+        <div class="logo">🎮 Arcade <span>X</span></div>
+        <div class="header-right">
+            <span id="playerNameDisplay" class="player-name"></span>
+            <a href="../../index.html" class="back-btn">⬅ Home</a>
+        </div>
+    </header>
+
+    <div class="game-wrapper">
+        <div class="game-container glass-card">
+            <div class="ui-panel">
+                <p>Score: <span id="score" class="highlight">0</span></p>
+                <p>Level: <span id="level" class="highlight">1</span></p>
+            </div>
+            
+            <div class="game-area-container">
+                <div id="gameArea"></div>
+                
+                <div class="overlay" id="startScreen">
+                    <div class="overlay-content">
+                        <h1 id="screenTitle" style="color: #00f2fe;">Nitro Racer</h1>
+                        <p id="screenMsg">Dodge the traffic! Use Arrow Keys.</p>
+                        <button onclick="startGame()" class="glow-btn">Start Engine</button>
+                    </div>
+                </div>
+
+                <div class="overlay" id="pauseOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <h2 style="color: #facc15; font-size: 2.5rem; text-shadow: 0 0 15px rgba(250, 204, 21, 0.5);">PAUSED</h2>
+                        <p style="font-size: 1.2rem; color: #fff;">Press [ SPACE ] to Resume</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <div class="ctrl-row">
+                <button class="btn-ctrl" onmousedown="moveLeft()" onmouseup="stopMove()" ontouchstart="moveLeft()" ontouchend="stopMove()">◀</button>
+                <button class="btn-ctrl" onmousedown="moveRight()" onmouseup="stopMove()" ontouchstart="moveRight()" ontouchend="stopMove()">▶</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
